@@ -1,0 +1,18 @@
+<%= simple_form_for(@application) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :email %>
+    <%= f.input :job_id %>
+    <%= f.input :resume %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :cover_letter %>
+    <%= f.input :opt_in %>
+    <%= f.input :address %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

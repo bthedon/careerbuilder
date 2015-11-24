@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Applications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Job</th>
+      <th>Resume</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Cover letter</th>
+      <th>Opt in</th>
+      <th>Address</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @applications.each do |application| %>
+      <tr>
+        <td><%= application.email %></td>
+        <td><%= application.job_id %></td>
+        <td><%= application.resume %></td>
+        <td><%= application.first_name %></td>
+        <td><%= application.last_name %></td>
+        <td><%= application.cover_letter %></td>
+        <td><%= application.opt_in %></td>
+        <td><%= application.address %></td>
+        <td><%= link_to 'Show', application %></td>
+        <td><%= link_to 'Edit', edit_application_path(application) %></td>
+        <td><%= link_to 'Destroy', application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Application', new_application_path %>

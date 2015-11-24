@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @application.email %>
+</p>
+
+<p>
+  <strong>Job:</strong>
+  <%= @application.job_id %>
+</p>
+
+<p>
+  <strong>Resume:</strong>
+  <%= @application.resume %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @application.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @application.last_name %>
+</p>
+
+<p>
+  <strong>Cover letter:</strong>
+  <%= @application.cover_letter %>
+</p>
+
+<p>
+  <strong>Opt in:</strong>
+  <%= @application.opt_in %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @application.address %>
+</p>
+
+<%= link_to 'Edit', edit_application_path(@application) %> |
+<%= link_to 'Back', applications_path %>

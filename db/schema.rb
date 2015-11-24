@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151123234032) do
+ActiveRecord::Schema.define(version: 20151124005034) do
+
+  create_table "applications", force: :cascade do |t|
+    t.string   "email"
+    t.integer  "job_id"
+    t.text     "resume"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.text     "cover_letter"
+    t.boolean  "opt_in",       default: true, null: false
+    t.string   "address"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -25,6 +38,21 @@ ActiveRecord::Schema.define(version: 20151123234032) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+
+  create_table "jobs", force: :cascade do |t|
+    t.string   "title"
+    t.string   "city"
+    t.string   "state"
+    t.text     "description"
+    t.boolean  "is_active",    default: true,  null: false
+    t.boolean  "is_internal",  default: true,  null: false
+    t.text     "requirements"
+    t.boolean  "is_remote",    default: false, null: false
+    t.float    "hourly_rate"
+    t.integer  "user_id"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
