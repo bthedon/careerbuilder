@@ -55,6 +55,8 @@
 <p>
   <strong>User:</strong>
   <%= @job.user.email %>
+  joined Careerbuilder <%= distance_of_time_in_words(Time.now, @job.user.created_at) %> ago
+  and has created <%= @job.user.jobs.not_onsite.count %> remote jobs and <%= @job.user.jobs.is_onsite.count %> onsite jobs.
 </p>
 
 <%= link_to 'Apply to this Job', new_application_path(:job_id => @job.id) %>

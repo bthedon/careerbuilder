@@ -9,4 +9,11 @@ class Job < ActiveRecord::Base
 	def city_state
 		"#{city}, #{state}"
 	end	
+
+	def self.not_onsite
+		self.where(is_remote: true)
+	end
+	def self.is_onsite
+		self.where(is_remote: false)
+	end
 end
